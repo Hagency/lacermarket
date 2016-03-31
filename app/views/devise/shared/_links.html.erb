@@ -1,5 +1,6 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+<p class="col l6 offset-l3">Sei già loggato?</p>
+  <%= link_to "Log in",  new_session_path(resource_name), class:"waves-light waves-effect btn btn-devise" %><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
