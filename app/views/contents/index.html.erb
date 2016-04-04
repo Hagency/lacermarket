@@ -3,10 +3,13 @@
 <!-- <h1>Listing Contents</h1> -->
 <div class="row">
     <% @contents.each do |content| %>
+      <div class="col l12 center">
+                        <%= will_paginate @contents, class: "white" %>
+</div>
 
 <div class="col l3 s12">
- <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
+ <div class="card" >
+          <div class="card-image waves-effect waves-block waves-light" style="height: 150px;">
           <%= image_tag content.cover.url, class: "activator" %>
           </div>
           <div class="card-content">
@@ -14,8 +17,9 @@
 
             <p class="chip" ><%= content.user.name %> <img src=""></p>
             <p class="right" ><%= number_to_currency(content.price) %> </p>
-            <p><%= link_to 'Show', content, class: "btn btn-devise waves-light waves-effect blue"%></p>
-                 <% if content.user == current_user %>
+            <p><%= link_to 'Show', content , class: "btn btn-devise waves-light waves-effect blue"%></p>
+
+            <% if content.user == current_user %>
             <p><%= link_to 'Edit', edit_content_path(content), class: "btn btn-devise waves-light waves-effect"%></p>
             <p style="background-color: white; color: black;"><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-devise waves-light waves-effect", style: "background-color: red;" %></p>
             <% end %>
@@ -32,11 +36,20 @@
 
     </div>
   <% end %>
-  </div>
 
-              <% if user_signed_in? %>
+      
+                             <% if user_signed_in? %>
             <%=  link_to 'New Content', new_content_path, class: "btn btn-devise waves-light waves-effect"%>
               <% else %>
             <%=  link_to 'Comincia a vendere anche tu', root_path , data: { confirm: 'Are you sure?' }, class: "btn btn-devise waves-light waves-effect"%>
             <% end %>
+
+
+        
+  </div>
+
+
+
+         
+
 

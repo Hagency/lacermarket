@@ -23,7 +23,14 @@
   <strong>Descrizione:</strong>
   <%= @content.description %>
 </p>
-
+<p>
+  <strong>Data di pubblicazione:</strong>
+  <%= @content.created_at %>
+</p>
+<p>
+  <strong>Data dell'ultimo aggiornamento:</strong>
+  <%= @content.updated_at %>
+</p>
 <p>
   <strong>Prezzo:</strong>
   <%= @content.price %>
