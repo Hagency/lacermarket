@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+    <th>Immagine</th>
       <th>Title</th>
       <th>Description</th>
       <th>Utente</th>
@@ -17,19 +18,22 @@
   <tbody>
     <% @contents.each do |content| %>
       <tr>
+
+        <td><%= image_tag content.cover.url(:thumb) %></td>
         <td><%= content.title %></td>
         <td><%= content.description %></td>
         <td><%= content.user.name if content.user %></td>
         <td><%= content.price %>
         euro  </td>
         <td><%= link_to 'Show', content %></td>
+
         <% if content.user == current_user %>
 
         <td><%= link_to 'Edit', edit_content_path(content) %></td>
         <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
-    <% end %>
+        <% end %>
   </tbody>
 </table>
 
