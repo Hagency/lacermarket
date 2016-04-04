@@ -1,26 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @content.cover.url(:medium) %>
+<div class="row">
 
+<div class="col l8">
+  <%= link_to "back" , contents_path, class: "btn red left col l2"%>
+  <br>
+  <br>
 
+	<%= image_tag @content.cover.url(:medium), class: "l12"%>
 
-<p>
-  <strong>Title:</strong>
+</div>
+
+<div class="col l4">
+<p> <strong>Nome del venditore</strong>: <%= @content.user.name %></p>
+
+<p >
+  <strong>Nome del prodotto:</strong>
   <%= @content.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrizione:</strong>
   <%= @content.description %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Prezzo:</strong>
   <%= @content.price %>
   euro
 </p>
-        <% if @content.user == current_user %>
+  <div class="col l12">
+  <p><%= link_to "Aggiungi al carrello" , root_path, class: "btn red right col l12 grey lighten-1 "%></p>
+  <% if @content.user == current_user %>
+
+
+<p><%= link_to 'Edit', edit_content_path(@content) , class: "btn red right col l12 right "%> </p>
+  </div>
+       
+
+
+</div>
+<div class="col l12">
+ 
+</div class="col l8">
+
+
+</div>
 
 <% end %>
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>

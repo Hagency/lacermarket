@@ -6,7 +6,7 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
-    @contents = Content.all
+    @contents = Content.all.order("created_at DESC").limit(10)
   end
 
   # GET /contents/1
