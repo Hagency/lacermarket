@@ -31,7 +31,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem "will_paginate-materialize"
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'dotenv-rails', :groups => [:development, :test]
-
+gem 'stripe'
 
 
 # Use ActiveModel has_secure_password

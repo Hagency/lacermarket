@@ -2,12 +2,14 @@
 
 <!-- <h1>Listing Contents</h1> -->
 <div class="row">
-    <% @contents.each do |content| %>
-      <div class="col l12 center">
-                        <%= will_paginate @contents, class: "white" %>
+     <div class="col l12 center">
+                        <%= will_paginate @contents, class: "center" %>
 </div>
-
-<div class="col l3 s12">
+    <% @contents.each do |content| %>
+ 
+<div>
+  
+<div class="col l4 ">
  <div class="card" >
           <div class="card-image waves-effect waves-block waves-light" style="height: 150px;">
           <%= image_tag content.cover.url, class: "activator" %>
@@ -33,20 +35,23 @@
           </div>
 
     </div>
-
-    </div>
+</div>
+</div>
   <% end %>
 
-      
+
                              <% if user_signed_in? %>
             <%=  link_to 'New Content', new_content_path, class: "btn btn-devise waves-light waves-effect"%>
               <% else %>
             <%=  link_to 'Comincia a vendere anche tu', root_path , data: { confirm: 'Are you sure?' }, class: "btn btn-devise waves-light waves-effect"%>
             <% end %>
+</div>
+
+
+      
 
 
         
-  </div>
 
 
 
