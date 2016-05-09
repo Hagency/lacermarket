@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  before_action :set_content, only: [:show, :edit, :update, :destroy] 
+  before_action :set_content, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_user, only: [:edit, :update]
 
@@ -31,7 +31,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       if @content.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
+        format.html { redirect_to @content, notice: 'Il tuo prodotto è  stato inserito correttamente!' }
       else
         format.html { render :new }
       end
@@ -43,7 +43,7 @@ class ContentsController < ApplicationController
   def update
     respond_to do |format|
       if @content.update(content_params)
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
+        format.html { redirect_to @content, notice: 'Il tuo prodotto è  stato inserito correttamente!' }
         format.json { render :show, status: :ok, location: @content }
       else
         format.html { render :edit }
